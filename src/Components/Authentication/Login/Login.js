@@ -88,14 +88,14 @@ class login extends Component {
               <div className="login">
                 <form id="form" onSubmit={this.handleSubmit}>
                   <i
-                    class="fas fa-times"
+                    className="fas fa-times"
                     onClick={this.props.close}
                     style={{
                       position: "absolute",
                       left: "22rem",
                     }}
                   ></i>
-                  <label for="number">Mobile Number</label>
+                  <label htmlFor="number">Mobile Number</label>
                   <input
                     id="number"
                     type="text"
@@ -115,7 +115,7 @@ class login extends Component {
               <form onSubmit={this.handleSubmit}>
                 <div>
             <p>{this.props.loginmessage}</p>
-                  <label for="otp">OTP:</label>{" "}
+                  <label htmlFor="otp">OTP:</label>{" "}
                   <input
                     id="otp"
                     type="text"

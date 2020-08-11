@@ -43,7 +43,7 @@ export const gethomedetails = () => {
     dispatch(gethomeDetailsStart());
 
     var URL =
-      "/web/index.php/v1/users/user-home";
+      "web/index.php/v1/users/user-home";
 
     fetch(URL, {
       method: "POST",
