@@ -44,10 +44,10 @@ function ControlledCarousel(props) {
       <Carousel
         activeIndex={index}
         onSelect={handleSelect}
-        indicators="true"
+        indicators={true}
         bsPrefix="carousel"
-        slide="true"
-        interval="3000"
+        slide={true}
+        interval={3000}
       >
         {banner}
       </Carousel>

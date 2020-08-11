@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { ThroughProvider } from "react-through";
 import { Provider } from "react-redux";
+import { createBrowserHistory } from 'history';
 import thunk from "redux-thunk";
 import ProductDetailReducer from "./store/reducers/ProductDetailReducer";
 import SearchReducer from "./store/reducers/SearchReducer";
@@ -13,13 +14,14 @@ import NotificationReducer from './store/reducers/NotificationReducer'
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import ReactDOM from "react-dom";
 import "./index.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./Container/App/App";
 import registerServiceWorker from "./registerServiceWorker";
 import {persistStore,persistReducer} from 'redux-persist';
 import authReducer from './store/reducers/AuthReducer'
 import storage from 'redux-persist/lib/storage'
-
+// export const history = createBrowserHistory({
+//   basename: process.env.PUBLIC_URL
+// });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const RootReducers = combineReducers({
   product: ProductDetailReducer,
@@ -45,7 +47,7 @@ const persistor=persistStore(store);
 export{persistor,store}
 const theApp = (
   <Provider store={store}>
-    <BrowserRouter forceRefresh={true}>
+    <BrowserRouter forceRefresh={true} basename="/">
       <ThroughProvider>
         <App />
       </ThroughProvider>
