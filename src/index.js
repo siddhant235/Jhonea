@@ -47,7 +47,7 @@ const persistor=persistStore(store);
 export{persistor,store}
 const theApp = (
   <Provider store={store}>
-    <BrowserRouter forceRefresh={true} basename="/">
+    <BrowserRouter forceRefresh={true}>
       <ThroughProvider>
         <App />
       </ThroughProvider>
