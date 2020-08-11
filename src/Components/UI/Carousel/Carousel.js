@@ -12,8 +12,8 @@ function ControlledCarousel(props) {
     setIndex(selectedIndex);
   };
   let banner = <div>Loading....</div>;
-
-  if (!props.loading) {
+console.log(props.loading)
+  if (props.loading) {
     banner = props.banners.map((ban) => {
       return (
         <Carousel.Item bsPrefix="carousel-item" key={ban.bannerID}>

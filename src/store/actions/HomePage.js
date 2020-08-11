@@ -1,9 +1,10 @@
 import * as actionTypes from "./actionTypes";
 
-export const gethomedetailsSuccess = (homeDetails) => {
+export const gethomedetailsSuccess = (homeDetails,hostatus) => {
   return {
     type: actionTypes.GETHOMEDETAILS_SUCCESS,
     homeDetails: homeDetails,
+    hostatus:hostatus
   };
 };
 export const gethomeDetailsFail = (error) => {
@@ -65,7 +66,8 @@ export const gethomedetails = () => {
     })
       .then((response) => response.json())
       .then((res) => {
-        dispatch(gethomedetailsSuccess(res[0]));
+        console.log(res[0].status)
+        dispatch(gethomedetailsSuccess(res[0],res[0].status));
       })
       .catch((err) => {
         dispatch(gethomeDetailsFail(err));
@@ -95,7 +97,7 @@ export const getcountrydetails = () => {
       .then((response) => response.json())
       .then((res) => {
         dispatch(getcountrydetailsSuccess(res[0].data));
-        console.log(res[0].data);
+        console.log(res);
       })
      
   };

@@ -10,7 +10,8 @@ class Cards extends Component {
 
   render() {
     let prod = <div>Loading</div>;
-    if (!this.props.loading) {
+    console.log(this.props.loading)
+    if (this.props.loading) {
       prod = this.props.details.product.map((product) => {
         return (
           <div key={product.productID}>

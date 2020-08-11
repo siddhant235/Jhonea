@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { ThroughProvider } from "react-through";
 import { Provider } from "react-redux";
-import { createBrowserHistory } from 'history';
 import thunk from "redux-thunk";
 import ProductDetailReducer from "./store/reducers/ProductDetailReducer";
 import SearchReducer from "./store/reducers/SearchReducer";
@@ -14,7 +13,7 @@ import NotificationReducer from './store/reducers/NotificationReducer'
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./Container/App/App";
+import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import {persistStore,persistReducer} from 'redux-persist';
 import authReducer from './store/reducers/AuthReducer'

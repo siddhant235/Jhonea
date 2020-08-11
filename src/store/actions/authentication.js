@@ -41,7 +41,7 @@ export const signup = (UserDetails) => {
     })
       .then((response) => response.json())
       .then((res) => {
-        dispatch(Usersignup(res[0].data, res[0].message, res[0].status));
+        dispatch(Usersignup(res[0].message, res[0].status));
         console.log(res[0].message);
       })
 

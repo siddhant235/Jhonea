@@ -19,10 +19,10 @@ class Home extends Component {
 
   }
   render() {
-   
+   console.log(this.props.hostatus)
     let categories = <div>Loading....</div>;
 
-    if (!this.props.homeloading) {
+    if (this.props.hostatus) {
       categories = this.props.homeDetails.category.map((cat) => {
         return (
           <span className="individual" key={cat.categoryID}>
@@ -43,7 +43,7 @@ class Home extends Component {
       <React.Fragment>
         <div className="Home container-fluid">
           <Menu />
-          <Carousel banners={this.props.homeDetails.banner} loading={this.props.homeloading}/>
+          <Carousel banners={this.props.homeDetails.banner} loading={this.props.hostatus}/>
           <div className="Multi">
             <MultiCarousel
               happening={categories}
@@ -56,7 +56,7 @@ class Home extends Component {
           </div>
           <Card
             details={this.props.homeDetails}
-            loading={this.props.homeloading}
+            loading={this.props.hostatus}
           />
           <Footer />
         </div>
@@ -68,6 +68,7 @@ const mapStateToProps = (state) => {
   return {
     homeDetails: state.home.homeDetails,
     homeloading: state.home.homeloading,
+    hostatus:state.home.hostatus
   };
 };
 const mapDispatchToProps = (dispatch) => {

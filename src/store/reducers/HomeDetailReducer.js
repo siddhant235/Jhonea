@@ -6,6 +6,7 @@ const initialState={
     countryDetails:[],
     stateDetails:[],
     cityDetails:[],
+    hostatus:false,
     homeloading:true
 }
 
@@ -19,6 +20,7 @@ const gethomeDetailStart = (state, action) => {
     return updateObject(state, {
       homeDetails: action.homeDetails,
       homeloading: false,
+      hostatus:action.hostatus
     });
   };
   
