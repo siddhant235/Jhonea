@@ -1,6 +1,6 @@
 import React from "react";
 import "./MegaMenu.css";
-import {NavLink} from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 const MegaMenu = () => {
   return (
     <React.Fragment>
@@ -10,14 +10,13 @@ const MegaMenu = () => {
 
           <ul>
             <li>
-              <a href="/"> Home</a>
+              <NavLink to="/"> Home</NavLink>
             </li>
             <div className="dropdownsa">
               <li>
-                <a href="#default">
-                  {" "}
+                <NavLink to="#default">
                   Shop<i className="fas fa-angle-down"></i>
-                </a>
+                </NavLink>
               </li>
 
               <div className="dropdown-contenta">
@@ -49,7 +48,6 @@ const MegaMenu = () => {
                 <NavLink to="/myprofile">My Profile</NavLink>
                 <NavLink to="/wishlist">My Wishlist</NavLink>
                 <a href="#default">My Orders</a>
-              
               </div>
             </div>
             <div className="dropdownsc">
