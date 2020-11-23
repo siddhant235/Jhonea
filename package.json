@@ -1,8 +1,12 @@
 {
   "name": "jhoneaproject",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
   "homepage": ".",
+=======
+>>>>>>> 96db84044fb68a23746d226363210e3fcf20896c
   "proxy": "http://13.235.251.42/grocery/backend/",
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.18.10",
