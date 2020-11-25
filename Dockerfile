@@ -1,11 +1,22 @@
-FROM node:12.19.0
+# pull official base image
+FROM node:13.12.0-alpine
 
+# set working directory
 WORKDIR /app
 
-COPY . /app
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
+# install app dependencies
+COPY package.json ./
 RUN npm install
+RUN npm install react-scripts@3.4.2 -g 
+# add app
+COPY . ./
 
-CMD npm start
 
-EXPOSE 3000
+# Building app
+RUN npm run build
+
+# Running the app
+CMD [ "npm", "start" ]
