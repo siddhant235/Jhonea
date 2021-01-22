@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tag='econ'
+tag='ecom'
 project='jhonea'
 start=`date +%s`
 
